@@ -28,10 +28,15 @@ const getPendingCount = async (req, res) => {
   try {
     const count = await Booking.countDocuments({ status: "pending" });
     res.status(200).json({ success: true, count });
-  } catch (error) {
-    res.status(500).json({ success: false, message: "Could not get count" });
-  }
-};
+  }catch (error) {
+  console.log(error);
+
+  res.status(500).json({
+    success: false,
+    message: "Could not get count",
+    error: error.message
+  });
+}
 
 const updateBookingStatus = async (req, res) => {
   try {
