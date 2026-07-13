@@ -1,6 +1,6 @@
 const express = require("express");
 const { createBooking, getAllBookings, getPendingCount, updateBookingStatus } = require("../controller/BookingController");
-const adminAuth = require("../middleware/AdminAuth");
+const adminAuth = require("../middleware/adminAuth");
 
 const router = express.Router();
 
