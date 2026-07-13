@@ -36,8 +36,8 @@ const getPendingCount = async (req, res) => {
     message: "Could not get count",
     error: error.message
   });
+  }
 }
-
 const updateBookingStatus = async (req, res) => {
   try {
     const { id } = req.params;
