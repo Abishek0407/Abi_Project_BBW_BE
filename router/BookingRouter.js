@@ -7,6 +7,6 @@ const router = express.Router();
 router.post("/create", createBooking);
 router.get("/all", adminAuth, getAllBookings);
 router.get("/pending-count", getPendingCount);  
-router.patch("/status/:id", updateBookingStatus);
+router.patch("/status/:id", adminAuth, updateBookingStatus);
 
 module.exports = router;
