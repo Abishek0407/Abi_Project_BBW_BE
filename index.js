@@ -11,6 +11,9 @@ mainserver.use(express.json())
 
 mainserver.use("/api",require("./app"))
 
+mainserver.get("/",(req,res)=>
+    res.send("BBW Backend is running 🚀"))
+
 mainserver.get("/check",(req,res)=>
     res.send("The server is Working"))
 
