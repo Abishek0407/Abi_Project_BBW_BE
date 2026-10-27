@@ -21,7 +21,7 @@ const bookingSchema = new mongoose.Schema(
     },
 
     service: {
-      type: String,
+      type: [{ type: String, trim: true }],
       required: true,
     },
 
