@@ -21,8 +21,9 @@ const bookingSchema = new mongoose.Schema(
     },
 
     service: {
-      type: [{ type: String, trim: true }],
+      type: [String],
       required: true,
+      validate: [(arr) => arr.length > 0, "Select at least one service"],
     },
 
     note: {

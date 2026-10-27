@@ -1,6 +1,3 @@
-const ADMIN_USERNAME = "BBW";
-const ADMIN_PASSWORD = "2552";
-
 const adminAuth = (req, res, next) => {
   const { username, password } = req.headers;
 
@@ -11,7 +8,10 @@ const adminAuth = (req, res, next) => {
     });
   }
 
-  if (username !== ADMIN_USERNAME || password !== ADMIN_PASSWORD) {
+  if (
+    username !== process.env.ADMIN_USERNAME ||
+    password !== process.env.ADMIN_PASSWORD
+  ) {
     return res.status(403).json({
       success: false,
       message: "Invalid admin credentials",
